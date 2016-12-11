@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading;
 
 namespace DockerDemo
 {
@@ -12,7 +13,8 @@ namespace DockerDemo
 
 		foreach (Process theprocess in processlist)
 		{
-			Console.WriteLine($"Process: {theprocess.ProcessName}  ID: {theprocess.Id}");
+			Thread.Sleep(1000);
+            Console.WriteLine($"Process: {theprocess.ProcessName}  ID: {theprocess.Id}");
 		} 
         //Number of processes differs from local execution to docker run
         Console.WriteLine(processlist.Length);
